@@ -74,12 +74,12 @@ with open(fname, 'r') as f:
 
         code_sn.append(t)
 
-        server_code_final = template_php.replace(
-            '// CODE_SNIPPET_AUTOMATED', '\n\n'.join(code_sn)
-        )
+    server_code_final = template_php.replace(
+        '// CODE_SNIPPET_AUTOMATED', '\n\n'.join(code_sn)
+    )
 
-        with open('out/server.php', 'w') as g:
-            g.write(server_code_final)
+    with open('out/server.php', 'w') as g:
+        g.write(server_code_final)
 
     var_c = 0
     var_n = '__rpp_var_{n}'
