@@ -32,7 +32,7 @@ const [{vname}, set{vname}] = useState("");
   }}, []);
 """
 
-assert fname.endswith(".php"), f"File {fname} is not a PHP file"
+# assert fname.endswith(".php"), f"File {fname} is not a PHP file"
 assert os.path.isfile(fname), f"File {fname} does not exist"
 
 rpphost_dir = "./rpphost"
