@@ -30,7 +30,7 @@ React++ is a modern full-stack web framework that seamlessly integrates frontend
 3. Access the application at `http://localhost:5173`
 
 ## Usage
-React++ supports any file that incorporates both PHP and React code in one place. A sample implementation is available at `tests/test.php` to help you get started.
+React++ supports any file that incorporates both PHP and React code in one place. A sample implementation is available at `tests/test.jsx` to help you get started.
 
 ## Contributing
 
