@@ -35,6 +35,23 @@ const [{vname}, set{vname}] = useState("");
 assert fname.endswith(".php"), f"File {fname} is not a PHP file"
 assert os.path.isfile(fname), f"File {fname} does not exist"
 
+rpphost_dir = "./rpphost"
+node_modules_path = os.path.join(rpphost_dir, "node_modules")
+
+if not os.path.exists(node_modules_path):
+    print("node_modules directory not found. Running npm install...")
+    try:
+        with open("npm_install.log", "w") as npm_log:
+            subprocess.run(
+                ["npm", "install"], cwd=rpphost_dir,
+                stdout=npm_log, stderr=npm_log, check=True
+            )
+        print("npm install completed successfully.")
+    except subprocess.CalledProcessError as e:
+        print(f"Error during npm install: {e}")
+else:
+    print("node_modules directory already exists. Skipping npm install.")
+
 template_php = ''
 
 with open('template_server.php', 'r') as f:
@@ -72,11 +89,11 @@ with open(fname, 'r') as f:
 
     comps = parse_component_clauses(data)
 
-    for i in comps:
-        print(i)
+    # for i in comps:
+    #     print(i)
 
-    for i in clauses:
-        print(i)
+    # for i in clauses:
+    #     print(i)
 
     # a map
     # react component => php code occurance
@@ -90,7 +107,7 @@ with open(fname, 'r') as f:
         which_comp = None
 
         for j, jv in enumerate(comps):
-            print(iv.start, jv.start, jv.end, iv.end)
+            # print(iv.start, jv.start, jv.end, iv.end)
             if jv.start <= iv.start <= iv.end <= jv.end:
                 in_component = True
                 which_comp = jv
@@ -176,7 +193,6 @@ with open(fname, 'r') as f:
     if last_pos < len(data):
         result += data[last_pos:]
 
-    print(result)
     with open('rpphost/src/__app_gen.jsx', 'w') as f:
         f.write(result)
 
