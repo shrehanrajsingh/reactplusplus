@@ -145,7 +145,6 @@ function Dashboard() {
     <div
       style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}
     >
-      {/* Header */}
       <header
         style={{
           backgroundColor: "#3a4b5c",
@@ -173,7 +172,6 @@ function Dashboard() {
       </header>
 
       <div style={{ display: "flex", flex: 1 }}>
-        {/* Sidebar */}
         <aside
           style={{
             width: "220px",
@@ -223,14 +221,12 @@ function Dashboard() {
             </ul>
           </nav>
         </aside>
-
-        {/* Main Content */}
+        
         <main style={{ flex: 1, padding: "30px", backgroundColor: "#f5f7fa" }}>
           <h2 style={{ color: "#2c3e50", marginTop: 0, marginBottom: "25px" }}>
             Dashboard Overview
           </h2>
 
-          {/* Stat Cards */}
           <div
             style={{
               display: "flex",
@@ -269,8 +265,7 @@ function Dashboard() {
               </div>
             ))}
           </div>
-
-          {/* Recent Activity Table */}
+ 
           <div
             style={{
               backgroundColor: "white",
