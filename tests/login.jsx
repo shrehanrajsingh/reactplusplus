@@ -272,12 +272,12 @@ function Dashboard() {
                   }}
                 >
                   {index === 0
-                    ? "1,254"
+                    ? "1,234"
                     : index === 1
-                    ? "$8,945"
+                    ? "₹8,765"
                     : index === 2
                     ? "432"
-                    : "5,378"}
+                    : "5,310"}
                 </p>
               </div>
             ))}
@@ -328,17 +328,17 @@ function Dashboard() {
               <tbody>
                 {[
                   {
-                    user: "John Doe",
+                    user: "Shrehan Raj Singh",
                     activity: "Created a new order",
                     time: "2 minutes ago",
                   },
                   {
-                    user: "Jane Smith",
+                    user: "Shrehan Raj Singh",
                     activity: "Updated profile",
                     time: "15 minutes ago",
                   },
                   {
-                    user: "Mike Johnson",
+                    user: "Harsh Raj Dubey",
                     activity: "Completed payment",
                     time: "1 hour ago",
                   },
